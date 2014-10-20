@@ -9,12 +9,17 @@ export default Ember.ArrayController.extend({
 
   serialized: function(key, val) {
     if (arguments.length === 2) {
-      var content = JSON.parse(decodeURI(val));
+      var parsed = JSON.parse(decodeURI(val));
+      var content = [];
+      parsed.forEach(function(item) {
+        item = Image.create(item);
+        content.pushObject(item);
+      });
       this.set('content', content);
       return val;
     }
     return encodeURI(JSON.stringify(this.get('content')));
-  }.property('content.@each'),
+  }.property('content.@each','content.@each.x','content.@each.y'),
 
   actions: {
     addImage: function() {
