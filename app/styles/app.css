@@ -1,3 +1,25 @@
 html, body {
   margin: 20px;
 }
+
+.canvas-canvas-component {
+  position: relative;
+  border: 1px solid #eee;
+  height: 800px;
+  width: 100%;
+}
+
+.canvas-image-component {
+  border: 1px solid #000;
+  position: absolute;
+}
+
+.left-column {
+  width: 25%;
+  float: left;
+}
+
+.right-column {
+  width: 75%;
+  float: left;
+}

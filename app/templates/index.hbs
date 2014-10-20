@@ -1,0 +1,16 @@
+<div class='left-column'>
+  <button {{action 'addImage'}}>Add Image</button> <br>
+  {{#if isAdding}}
+    X: {{input value=newImage.x}} <br>
+    Y: {{input value=newImage.y}} <br>
+    Width: {{input value=newImage.width}} <br>
+    Height: {{input value=newImage.height}} <br>
+    Url: {{input value=newImage.url}} <br>
+    Layer: {{input value=newImage.layer}} <br>
+    <button {{action 'saveImage'}}>Save Image</button> <br>
+  {{/if}}
+</div>
+
+<div class='right-column'>
+  {{canvas-canvas images=content}}
+</div>
